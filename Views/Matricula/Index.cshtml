@@ -1,0 +1,47 @@
+@model PC1.Models.Matricula;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h4>Matricula</h4>
+    <form asp-controller="Matricula" asp-action="Registrar">
+    <div>
+     <Strong><label asp-for="Nombres"></label><br></Strong>
+     <input asp-for="Nombres" class="form-control" style="width: 400px;">
+     <span asp-validation-for="Nombres" class="text-danger"></span>    
+    </div><br>
+    <div>
+     <Strong><label asp-for="Apellidos"></label></Strong><br>
+     <input asp-for="Apellidos" class="form-control" style="width: 400px;">
+     <span asp-validation-for="Apellidos" class="text-danger"></span> 
+    </div><br>
+    <div>
+     <Strong><label asp-for="Correo"></label></Strong><br>
+     <input asp-for="Correo" class="form-control" style="width: 400px;"> 
+     <span asp-validation-for="Correo" class="text-danger"></span>   
+    </div><br>
+    <div>
+     <Strong><label>Cursos</label></Strong><br>
+     <input asp-for="Matematica" class="form-check-input">
+     <label asp-for="Matematica"></label><br>
+     <input asp-for="Lenguaje" class="form-check-input">
+     <label asp-for="Lenguaje"></label><br>
+     <input asp-for="Historia" class="form-check-input">
+     <label asp-for="Historia"></label>
+     <p class="text-danger">@ViewData["Error"]</p>
+    </div><br>
+    <button type="submit" class="btn btn-lg btn-primary">Registrar</button>
+    </form><br>
+    @ViewData["Mensaje"]<br>
+    @ViewData["SubTotal"]<br>
+    @ViewData["IGV"]<br>
+    @ViewData["Total"]
+</body>
+</html>
